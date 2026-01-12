@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.Python
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large files
+*.npz
+*.hdf5
+*.h5
+data/
+kinetics_data/
+results/
+drl_outputs/
+
+# OS
+.DS_Store
+._*

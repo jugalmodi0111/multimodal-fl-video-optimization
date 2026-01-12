@@ -1,0 +1,95 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║           REAL-TIME TRAINING MONITOR - QUICK REFERENCE            ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📋 USAGE
+────────────────────────────────────────────────────────────────────
+  Basic:       ./monitor_drl.sh
+  Custom dir:  ./monitor_drl.sh path/to/results
+  Exit:        Press Ctrl+C
+
+📊 WHAT IT MONITORS
+────────────────────────────────────────────────────────────────────
+  ✓ Training progress (rounds completed, % complete)
+  ✓ Per-agent accuracy (PPO, SAC, TD3, Random)
+  ✓ Accuracy trends (last 5 rounds with bar charts)
+  ✓ Results comparison (best performer highlighted)
+  ✓ Aggregate statistics (avg accuracy, total time)
+  ✓ Resource usage (disk, files, timestamps)
+  ✓ Live activity log (recent training events)
+
+🎯 KEY METRICS DISPLAYED
+────────────────────────────────────────────────────────────────────
+  Latest Accuracy:  Most recent round's accuracy
+  Mean Accuracy:    Average across all rounds
+  Best Accuracy:    Highest accuracy achieved
+  Training Time:    Total time spent training
+  Progress Bar:     Visual % completion indicator
+
+📁 EXPECTED FILES
+────────────────────────────────────────────────────────────────────
+  results/PPO_metrics.csv       (round,accuracy,reward)
+  results/SAC_metrics.csv       (round,accuracy,reward)
+  results/TD3_metrics.csv       (round,accuracy,reward)
+  results/Random_metrics.csv    (round,accuracy,reward)
+  results/summary.csv           (agent,final_acc,mean_acc,std,time)
+  results/training.log          (optional event log)
+
+🚀 WORKFLOW
+────────────────────────────────────────────────────────────────────
+  1. Run training cell (Cell 18) in notebook
+  2. Open new terminal window
+  3. Run: ./monitor_drl.sh results
+  4. Watch real-time updates
+  5. Press Ctrl+C when done
+
+⚙️ CONFIGURATION
+────────────────────────────────────────────────────────────────────
+  Edit monitor_drl.sh:
+    Line 13: OUTPUT_DIR (default directory)
+    Line 20: REFRESH_INTERVAL (update frequency)
+
+🔧 TROUBLESHOOTING
+────────────────────────────────────────────────────────────────────
+  "Directory not found"     → Check path, use: ./monitor_drl.sh results
+  "No training data"        → Wait for training to start
+  "N/A" values              → Wait for first round to complete
+  Display looks weird       → Increase terminal window size
+
+💡 TIPS
+────────────────────────────────────────────────────────────────────
+  • Use full-screen terminal for best display
+  • Start monitor before or during training
+  • Works after training completes (review mode)
+  • Can run multiple monitors for different experiments
+  • Refresh rate: 2s (customizable)
+
+📈 EXAMPLE OUTPUT
+────────────────────────────────────────────────────────────────────
+  Training Progress:
+    [████████████████████] 100% (10/10 rounds)
+  
+  Latest Accuracy:
+    PPO:    0.8634 (Best: 0.8634)
+    SAC:    0.8556 (Best: 0.8556)
+    TD3:    0.8445 (Best: 0.8445)
+  
+  Best Performer: PPO (0.8634)
+  
+  Total Training Time: 511.2s (8.5m)
+
+🎨 COLOR CODES
+────────────────────────────────────────────────────────────────────
+  GREEN:   Active/Success/High values
+  YELLOW:  Warnings/Baseline/Info
+  BLUE:    Labels/Headers
+  CYAN:    Borders/Structure
+  RED:     Errors/Low values
+
+📖 FULL DOCUMENTATION
+────────────────────────────────────────────────────────────────────
+  See: MONITORING_GUIDE.md
+
+╔═══════════════════════════════════════════════════════════════════╗
+║  Enhanced monitor tracks ALL training metrics in real-time! 🚀    ║
+╚═══════════════════════════════════════════════════════════════════╝
